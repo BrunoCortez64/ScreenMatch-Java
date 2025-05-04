@@ -204,15 +204,27 @@ public class Principal {
                         e.getNumeroEpisodio(), e.getTitulo()));
     }
 
+//    private void topEpisodiosPorSerie(){
+//        buscarSeriePorTitulo();
+//        if (serieBusca.isPresent()){
+//            Serie serie = serieBusca.get();
+//            List<Episodio> topEpisodios = repositorio.topEpisodiosPorSerie(serie);
+//            topEpisodios.forEach(e ->
+//                    System.out.printf("Série: %s | Temporada %s - Episódio %s: %s | Avaliação: %s\n",
+//                            e.getSerie().getTitulo(), e.getTemporada(),
+//                            e.getNumeroEpisodio(), e.getTitulo(), e.getAvaliacao()));
+//        }
+//    }
+
     private void topEpisodiosPorSerie(){
         buscarSeriePorTitulo();
-        if (serieBusca.isPresent()){
+        if(serieBusca.isPresent()){
             Serie serie = serieBusca.get();
             List<Episodio> topEpisodios = repositorio.topEpisodiosPorSerie(serie);
             topEpisodios.forEach(e ->
-                    System.out.printf("Série: %s | Temporada %s - Episódio %s: %s | Avaliação: %s\n",
+                    System.out.printf("Série: %s Temporada %s - Episódio %s - %s Avaliação %s\n",
                             e.getSerie().getTitulo(), e.getTemporada(),
-                            e.getNumeroEpisodio(), e.getTitulo(), e.getAvaliacao()));
+                            e.getNumeroEpisodio(), e.getTitulo(), e.getAvaliacao() ));
         }
     }
 
